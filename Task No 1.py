@@ -9,7 +9,7 @@ def get_days_from_today(date: str) -> int | str:
             today = datetime.today()
             date_in_datetime_format = datetime.strptime(date, "%Y-%m-%d")
             return (date_in_datetime_format - today).days
-        except ValueError as error:
+        except ValueError:
             return f"Wrong date format given: input in form \"{date}\" does not match format \"%Y-%m-%d\""
 
     return f"Wrong date format: {type(date)}, must be str"
